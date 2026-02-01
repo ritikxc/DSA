@@ -3,12 +3,18 @@ public:
     int minimumCost(vector<int>& nums) {
 
         int ans = nums[0];
+        int mini1 = INT_MAX;
+        int mini2 = INT_MAX;
 
-        sort(nums.begin()+1, nums.end());
-
-        ans+= nums[1]+nums[2];
-
-        return ans;
-        
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]<mini1){
+                mini2 = mini1;
+                mini1 = nums[i];
+            }
+            else if(nums[i]<mini2){
+                mini2 = nums[i];
+            }
+        }
+        return ans +mini1+mini2;
     }
 };
