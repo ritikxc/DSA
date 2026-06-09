@@ -9,7 +9,6 @@ public:
             if(i<mini) mini = i;
             if(i>maxi) maxi = i;
         }
-        long long ans = (maxi-mini)*k; 
-        return ans;
+        return (maxi-mini)*k;;
     }
 };
