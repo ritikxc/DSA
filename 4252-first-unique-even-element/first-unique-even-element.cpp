@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int firstUniqueEven(vector<int>& nums) {
+        
+        int freq[101] = {0};
+        for(int i:nums){
+            freq[i]++;
+        }
+        for(int i:nums){
+            if(i%2==0 && freq[i]==1) return i;
+        }
+        return -1;
+    }
+};
