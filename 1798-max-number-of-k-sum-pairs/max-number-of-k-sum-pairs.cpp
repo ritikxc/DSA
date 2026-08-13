@@ -1,19 +1,18 @@
 class Solution {
 public:
     int maxOperations(vector<int>& nums, int k) {
-        sort(nums.begin(),nums.end());
+        
+        map<int, int> map;
         int count = 0;
-        int left = 0;
-        int right = nums.size()-1;
 
-        while(left<right){
-            if(nums[left]+nums[right]==k){
+        for(int i: nums){
+            int complement = k-i;
+
+            if(map[complement] > 0){
                 count++;
-                left++;
-                right--;
+                map[complement]--;
             }
-            else if(nums[left]+nums[right]<k) left++;
-            else right--;
+            else map[i]++;
         }
         return count;
     }
