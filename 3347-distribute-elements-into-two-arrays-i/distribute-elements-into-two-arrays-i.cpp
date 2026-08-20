@@ -12,10 +12,7 @@ public:
             if(arr1.back() > arr2.back()) arr1.push_back(nums[i]);
             else arr2.push_back(nums[i]);
         }
-        vector<int> ans;
-        for(int i: arr1) ans.push_back(i);
-        for(int i: arr2) ans.push_back(i);
-
-        return ans;
+        arr1.insert(arr1.end(), arr2.begin(), arr2.end());
+        return arr1;
     }
 };
