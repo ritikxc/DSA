@@ -4,6 +4,6 @@ public:
         unordered_set<int> check;
         for(int i: nums) check.insert(i);
 
-        return check.size() != nums.size();
+        return nums.size() != check.size();
     }
 };
